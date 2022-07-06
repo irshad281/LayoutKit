@@ -1,11 +1,24 @@
 //
-//  LayoutSectionExtension.swift
+//  Layout.swift
 //  
 //
-//  Created by Irshad Ahmad on 05/07/22.
+//  Created by Irshad Ahmad on 06/07/22.
 //
 
 import UIKit
+
+public class Layout {
+    
+}
+
+public enum LayoutDirection: CaseIterable {
+    case horizontal
+    case vertical
+}
+
+public extension NSDirectionalEdgeInsets {
+    static let defaultValue = NSDirectionalEdgeInsets(top: .zero, leading: 12, bottom: .zero, trailing: 12)
+}
 
 extension NSCollectionLayoutSection {
     

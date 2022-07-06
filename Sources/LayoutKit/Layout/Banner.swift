@@ -1,20 +1,14 @@
 //
-//  Layout.swift
+//  Layout+Banner.swift
 //  
 //
-//  Created by Irshad Ahmad on 08/06/22.
+//  Created by Irshad Ahmad on 06/07/22.
 //
 
-import Foundation
 import UIKit
 
-public extension NSDirectionalEdgeInsets {
-    static let defaultValue = NSDirectionalEdgeInsets(top: .zero, leading: 12, bottom: .zero, trailing: 12)
-}
-
-public class Layout {
-    
-    // MARK: - Get Grid Layout
+public extension Layout {
+    // MARK: - Get Banner Layout
     /// Add header view to respective section
     /// - Parameters:
     ///   - itemWidth: Item Width
@@ -23,17 +17,17 @@ public class Layout {
     ///   - contentInsets: NSDirectionalEdgeInsets
     ///   - headerView: Header View
     ///   - footerView: Footer View
-    ///   - Returns: NSCollectionLayoutSection
-    public class func gridLayout(
-        itemWidth: NSCollectionLayoutDimension = .estimated(50),
-        itemHeight: NSCollectionLayoutDimension = .absolute(40),
+    ///   - Returns: UICollectionViewCompositionalLayout
+    public static func bannerLayout(
+        itemWidth: NSCollectionLayoutDimension = .fractionalWidth(1),
+        itemHeight: NSCollectionLayoutDimension = .estimated(200),
         itemSpacing: CGFloat = 10,
         contentInsets: NSDirectionalEdgeInsets = .defaultValue,
         headerView: HeaderFooterView? = nil,
         footerView: HeaderFooterView? = nil
     ) -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout(
-            section: Layout.gridLayoutSection(
+            section: Layout.bannerLayoutSection(
                 itemWidth: itemWidth,
                 itemHeight: itemHeight,
                 itemSpacing: itemSpacing,
@@ -44,25 +38,24 @@ public class Layout {
         )
     }
     
-    // MARK: - Get Grid Layout Section
-    /// Layout Section like Grid
+    // MARK: - Banner Layout Section
+    /// Add header view to respective section
     /// - Parameters:
-    ///   - itemWidth: item width
-    ///   - itemHeight: item height
-    ///   - itemSpacing: spacing between 2 items
-    ///   - contentInsets: section Insets
-    ///   - headerView: header view to be added
-    ///   - footerView: foote view to be added
-    /// - Returns: NSCollectionLayoutSection
-    public class func gridLayoutSection(
-        itemWidth: NSCollectionLayoutDimension = .estimated(50),
-        itemHeight: NSCollectionLayoutDimension = .absolute(40),
+    ///   - itemWidth: Item Width
+    ///   - itemHeight: Item Height
+    ///   - itemSpacing: NSCollectionLayoutDimension
+    ///   - contentInsets: NSDirectionalEdgeInsets
+    ///   - headerView: Header View
+    ///   - footerView: Footer View
+    ///   - Returns: NSCollectionLayoutSection
+    public static func bannerLayoutSection(
+        itemWidth: NSCollectionLayoutDimension = .fractionalWidth(1),
+        itemHeight: NSCollectionLayoutDimension = .estimated(200),
         itemSpacing: CGFloat = 10,
         contentInsets: NSDirectionalEdgeInsets = .defaultValue,
         headerView: HeaderFooterView? = nil,
         footerView: HeaderFooterView? = nil
     ) -> NSCollectionLayoutSection {
-        
         let item = NSCollectionLayoutItem(
             layoutSize: .init(
                 widthDimension: itemWidth,
@@ -72,17 +65,16 @@ public class Layout {
         
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: .init(
-                widthDimension: .fractionalWidth(1),
-                heightDimension: .estimated(200)
+                widthDimension: itemWidth,
+                heightDimension: itemHeight
             ),
             subitems: [item]
         )
         group.interItemSpacing = .fixed(itemSpacing)
         
         let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = itemSpacing
-        section.contentInsets = contentInsets
-            
+        section.orthogonalScrollingBehavior = .paging
+        
         if let headerView = headerView {
             section.addHeaderFooterView(headerView)
         }
