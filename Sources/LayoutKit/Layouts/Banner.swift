@@ -7,7 +7,7 @@
 
 import UIKit
 
-public extension Layout {
+public extension LayoutKit {
     // MARK: - Get Banner Layout
     /// Add header view to respective section
     /// - Parameters:
@@ -18,7 +18,7 @@ public extension Layout {
     ///   - headerView: Header View
     ///   - footerView: Footer View
     ///   - Returns: UICollectionViewCompositionalLayout
-    public static func bannerLayout(
+    static func bannerLayout(
         itemWidth: NSCollectionLayoutDimension = .fractionalWidth(1),
         itemHeight: NSCollectionLayoutDimension = .estimated(200),
         itemSpacing: CGFloat = 10,
@@ -27,7 +27,7 @@ public extension Layout {
         footerView: HeaderFooterView? = nil
     ) -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout(
-            section: Layout.bannerLayoutSection(
+            section: LayoutKit.bannerLayoutSection(
                 itemWidth: itemWidth,
                 itemHeight: itemHeight,
                 itemSpacing: itemSpacing,
@@ -48,7 +48,7 @@ public extension Layout {
     ///   - headerView: Header View
     ///   - footerView: Footer View
     ///   - Returns: NSCollectionLayoutSection
-    public static func bannerLayoutSection(
+    static func bannerLayoutSection(
         itemWidth: NSCollectionLayoutDimension = .fractionalWidth(1),
         itemHeight: NSCollectionLayoutDimension = .estimated(200),
         itemSpacing: CGFloat = 10,

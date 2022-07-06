@@ -7,7 +7,7 @@
 
 import UIKit
 
-public extension Layout {
+public extension LayoutKit {
     // MARK: - Get Grid Layout
     /// Add header view to respective section
     /// - Parameters:
@@ -18,7 +18,7 @@ public extension Layout {
     ///   - headerView: Header View
     ///   - footerView: Footer View
     ///   - Returns: UICollectionViewCompositionalLayout
-    public class func gridLayout(
+    static func gridLayout(
         itemWidth: NSCollectionLayoutDimension = .estimated(50),
         itemHeight: NSCollectionLayoutDimension = .absolute(40),
         itemSpacing: CGFloat = 10,
@@ -27,7 +27,7 @@ public extension Layout {
         footerView: HeaderFooterView? = nil
     ) -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout(
-            section: Layout.gridLayoutSection(
+            section: LayoutKit.gridLayoutSection(
                 itemWidth: itemWidth,
                 itemHeight: itemHeight,
                 itemSpacing: itemSpacing,
@@ -48,7 +48,7 @@ public extension Layout {
     ///   - headerView: header view to be added
     ///   - footerView: foote view to be added
     /// - Returns: NSCollectionLayoutSection
-    public class func gridLayoutSection(
+    static func gridLayoutSection(
         itemWidth: NSCollectionLayoutDimension = .estimated(50),
         itemHeight: NSCollectionLayoutDimension = .absolute(40),
         itemSpacing: CGFloat = 10,

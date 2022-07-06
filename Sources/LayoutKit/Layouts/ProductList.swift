@@ -7,7 +7,7 @@
 
 import UIKit
 
-public extension Layout {
+public extension LayoutKit {
     
     // MARK: - Product List Layout
     /// Add header view to respective section
@@ -20,7 +20,7 @@ public extension Layout {
     ///   - headerView: Header View
     ///   - footerView: Footer View
     ///   - Returns: UICollectionViewCompositionalLayout
-    public class productListLayout(
+    static func productListLayout(
         direction: LayoutDirection = .horizontal,
         itemWidth: NSCollectionLayoutDimension = .estimated(100),
         itemHeight: NSCollectionLayoutDimension = .estimated(100),
@@ -30,7 +30,7 @@ public extension Layout {
         footerView: HeaderFooterView? = nil)
     -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout(
-            section: Layout.productListSection(
+            section: LayoutKit.productListSection(
                 direction: direction,
                 itemWidth: itemWidth,
                 itemHeight: itemHeight,
@@ -53,7 +53,7 @@ public extension Layout {
     ///   - headerView: Header View
     ///   - footerView: Footer View
     ///   - Returns: UICollectionViewCompositionalLayout
-    public class productListSection(
+    static func productListSection(
         direction: LayoutDirection = .horizontal,
         itemWidth: NSCollectionLayoutDimension = .estimated(100),
         itemHeight: NSCollectionLayoutDimension = .estimated(100),
