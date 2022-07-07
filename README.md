@@ -1,5 +1,5 @@
 # LayoutKit
-It's designed on the top of `UICollectionViewCompositionalLayout` in order to provide the advance and custom layouts for your apps. It provides `NSCollectionLayoutSection` and `UICollectionViewCompositionalLayout` for collectionView so you can use either `NSCollectionLayoutSection` if you have multiple sections or directly use layout. 
+Fully customizable and easy to use. It's designed on the top of `UICollectionViewCompositionalLayout` in order to provide the advance and custom layouts for your apps. It provides `NSCollectionLayoutSection` and `UICollectionViewCompositionalLayout` for collectionView so you can use either `NSCollectionLayoutSection` if you have multiple sections or directly use layout. 
 
 ## Banner layout with horizontal scroll
 <img width="300" alt="banner layout" src="https://user-images.githubusercontent.com/19393497/177686560-55f8a7bc-d543-4f73-992c-f565ffe8a496.jpg">
