@@ -2,7 +2,7 @@
 It's designed on the top of `UICollectionViewCompositionalLayout` in order to provide the advance and custom layouts for your apps. It provides `NSCollectionLayoutSection` and `UICollectionViewCompositionalLayout` for collectionView so you can use either `NSCollectionLayoutSection` if you have multiple sections or directly use layout. 
 
 ## Banner layout with horizontal scroll
-![banner layout](https://user-images.githubusercontent.com/19393497/177686560-55f8a7bc-d543-4f73-992c-f565ffe8a496.jpg)
+<img width="300" alt="banner layout" src="https://user-images.githubusercontent.com/19393497/177686560-55f8a7bc-d543-4f73-992c-f565ffe8a496.jpg">
 
 Add banner layout to you collection view in just few lines 
 ```swift
@@ -14,7 +14,7 @@ collectionView.collectionViewLayout = LayoutKit.bannerLayout(
 ## PLP
 Product List Layout
 
-![PLP](https://user-images.githubusercontent.com/19393497/177687099-fb345b64-2011-4c57-b87b-54129b5ba339.png)
+<img width="300" alt="PLP" src="https://user-images.githubusercontent.com/19393497/177687099-fb345b64-2011-4c57-b87b-54129b5ba339.png">
 
 
 ### Category Section Layout.
@@ -42,7 +42,7 @@ collectionView.collectionViewLayout = LayoutKit.productListSection(
 
 ### Sample home screen with multiple sections.
 
-![HomePage](https://user-images.githubusercontent.com/19393497/177687576-94585441-4ccb-4371-aa89-77fc90fbaea1.png)
+<img width="300" alt="HomePage" src="https://user-images.githubusercontent.com/19393497/177687576-94585441-4ccb-4371-aa89-77fc90fbaea1.png">
 
 Create your section wise layout and make `UICollectionViewCompositionalLayout`
 ```swift
@@ -82,4 +82,20 @@ func flowLayout() -> UICollectionViewCompositionalLayout {
 Now simply use the layout in your collectionView
 ```swift
 collectionView.collectionViewLayout = flowLayout()
+```
+
+## Tags Layout 
+
+<img width="300" alt="Tagss" src="https://user-images.githubusercontent.com/19393497/177693199-ad935472-91cb-49fb-8dd1-2cec13e6f521.jpg">
+ 
+#### Create Tags layout just like this.
+ 
+```swift
+collectionView.collectionViewLayout = LayoutKit.gridLayout(
+    headerView: HeaderFooterView(
+        identifier: TaskFilterHeader.identifier,
+        position: .top,
+        height: .estimated(40)
+    )
+)
 ```
