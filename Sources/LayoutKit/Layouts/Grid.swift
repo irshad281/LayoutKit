@@ -4,40 +4,28 @@
 //
 //  Created by Irshad Ahmad on 06/07/22.
 //
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 
 public extension LayoutKit {
-    // MARK: - Get Grid Layout
-    /// Add header view to respective section
-    /// - Parameters:
-    ///   - itemWidth: Item Width
-    ///   - itemHeight: Item Height
-    ///   - itemSpacing: NSCollectionLayoutDimension
-    ///   - contentInsets: NSDirectionalEdgeInsets
-    ///   - headerView: Header View
-    ///   - footerView: Footer View
-    ///   - Returns: UICollectionViewCompositionalLayout
-    static func gridLayout(
-        itemWidth: NSCollectionLayoutDimension = .estimated(50),
-        itemHeight: NSCollectionLayoutDimension = .absolute(40),
-        itemSpacing: CGFloat = 10,
-        contentInsets: NSDirectionalEdgeInsets = .defaultValue,
-        headerView: HeaderFooterView? = nil,
-        footerView: HeaderFooterView? = nil
-    ) -> UICollectionViewCompositionalLayout {
-        UICollectionViewCompositionalLayout(
-            section: LayoutKit.gridLayoutSection(
-                itemWidth: itemWidth,
-                itemHeight: itemHeight,
-                itemSpacing: itemSpacing,
-                contentInsets: contentInsets,
-                headerView: headerView,
-                footerView: footerView
-            )
-        )
-    }
-    
     // MARK: - Get Grid Layout Section
     /// Layout Section like Grid
     /// - Parameters:
