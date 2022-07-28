@@ -120,7 +120,7 @@ public extension LayoutKit {
             ),
             subitems: [item]
         )
-        group.interItemSpacing = .fixed(8)
+        group.interItemSpacing = .fixed(itemSpacing)
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = itemSpacing
         section.contentInsets = contentInsets
