@@ -125,6 +125,14 @@ public extension LayoutKit {
         section.interGroupSpacing = itemSpacing
         section.contentInsets = contentInsets
         
+        if let headerView = headerView {
+            section.addHeaderFooterView(headerView)
+        }
+        
+        if let footerView = footerView {
+            section.addHeaderFooterView(footerView)
+        }
+        
         return section
     }
 }
