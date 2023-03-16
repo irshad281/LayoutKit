@@ -61,6 +61,7 @@ public extension LayoutKit {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .paging
         section.interGroupSpacing = itemSpacing
+        section.contentInsets = contentInsets
         if let headerView = headerView {
             section.addHeaderFooterView(headerView)
         }
